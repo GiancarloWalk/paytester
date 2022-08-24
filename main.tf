@@ -55,18 +55,18 @@ data "ibm_pi_network" "priv-network" {
 }
 
 
-resource "ibm_pi_instance" "instance" {
-  pi_cloud_instance_id = local.cloud_instance_id
-  pi_memory            = var.memory
-  pi_processors        = var.processors
-  pi_instance_name     = var.instance_name
-  pi_proc_type         = var.processor_type
-  pi_image_id          = data.ibm_pi_image.power_image.id
-  pi_key_pair_name     = data.ibm_pi_key.key.id
-  pi_sys_type          = var.sys_type
-  pi_storage_type      = var.storage_type
-  pi_network {
-    network_id: data.ibm_pi_network.pub-network.id,
-    network_id: data.ibm_pi_network.priv-network.id  
-  }
-}
+#resource "ibm_pi_instance" "instance" {
+#  pi_cloud_instance_id = local.cloud_instance_id
+#  pi_memory            = var.memory
+#  pi_processors        = var.processors
+#  pi_instance_name     = var.instance_name
+#  pi_proc_type         = var.processor_type
+#  pi_image_id          = data.ibm_pi_image.power_image.id
+#  pi_key_pair_name     = data.ibm_pi_key.key.id
+#  pi_sys_type          = var.sys_type
+#  pi_storage_type      = var.storage_type
+#  pi_network {
+#    network_id: data.ibm_pi_network.pub-network.id,
+#    network_id: data.ibm_pi_network.priv-network.id  
+#  }
+#}
